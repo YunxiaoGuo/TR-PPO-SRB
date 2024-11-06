@@ -1,0 +1,35 @@
+import argparse
+import numpy as np
+
+def get_paras():
+    parser = argparse.ArgumentParser("Parameters for flocking environments")
+    parser.add_argument("-GPU", "--is_GPU", type=str, default='False')
+    parser.add_argument("-evaluate", "--evaluate", type=bool, default=False)
+    parser.add_argument("-plot", "--plot", type=bool, default=False)
+    parser.add_argument("-env-name", "--env_name", type=str, default='Hopper-v2')
+    parser.add_argument("-seed", "--seed",type=int, default=10)
+    parser.add_argument("-number-of-episode", "--num_episode",type=int, default=100)
+    parser.add_argument("-number-of-parallel", "--num_para", type=int, default=4)
+    parser.add_argument("-batch-size", "--batch_size", type=int, default=2048)
+    parser.add_argument("-max-step-per-round", "--max_step_per_round", type=int, default=2000)
+    parser.add_argument("-gamma", "--gamma", type=float, default=0.995)
+    parser.add_argument("-lamda", "--lamda", type=float, default=0.97)
+    parser.add_argument("-log-num-episode", "--log_num_episode", type=int, default=1)
+    parser.add_argument("-num_epoch", "--num_epoch", type=int, default=10),
+    parser.add_argument("-algorithm", "--algorithm", type=str, default='PPO-Clip')
+    parser.add_argument("-minibatch-size", "--minibatch_size", type=int, default=256)
+    parser.add_argument("-clip", "--clip", type=float, default=0.2)
+    parser.add_argument("-loss-coeff-value", "--loss_coeff_value", type=float, default=0.5)
+    parser.add_argument("-loss-coeff-entropy", "--loss_coeff_entropy", type=float, default=0.01)
+    parser.add_argument("-learning-rate", "--lr", type=float, default=3e-4)
+    parser.add_argument("-EPS", "--EPS", type=float, default=1e-10)
+    parser.add_argument("-num-parallel-run", "--num_parallel_run", type=int, default=1)
+    parser.add_argument("-schedule_adam", "--schedule_adam", type=str, default='linear')
+    parser.add_argument("-data-path", "--data_path", type=str, default='./data/')
+    parser.add_argument("-curve-path", "--curve_path", type=str, default='./fig/')
+    parser.add_argument("-layer_norm", "--layer_norm", type=str, default=True)
+    parser.add_argument("-state_norm", "--state_norm", type=str, default=True)
+    parser.add_argument("-advantage_norm", "--advantage_norm", type=str, default=True)
+    parser.add_argument("-lossvalue_norm", "--lossvalue_norm", type=str, default=True)
+    args = parser.parse_args()
+    return args
