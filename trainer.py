@@ -8,7 +8,8 @@ from tqdm import tqdm
 import os
 
 def train(args):
-    device = 'cuda:0' if args.is_GPU == 'True' else 'cpu'
+    args.is_GPU = bool(args.is_GPU)
+    device = 'cuda:0' if args.is_GPU == True else 'cpu'
     print("###############Training algorithm: "+args.algorithm+"##################")
     print("###############Training environment: " + args.env_name + "#############")
     print("###############Training device: " + device + "#############")
@@ -64,7 +65,7 @@ def train(args):
     data_path = os.path.join(data_path,args.algorithm)
     if not os.path.exists(data_path):
         os.makedirs(data_path)
-    np.save(os.path.join(data_path,+args.algorithm+'_'+'episode_reward_'+str(args.seed)+'.npy'),np.array(reward_record))
+    np.save(os.path.join(data_path,args.algorithm+'_'+'episode_reward_'+str(args.seed)+'.npy'),np.array(reward_record))
 
 
 

@@ -8,7 +8,7 @@ def get_paras():
     parser.add_argument("-plot", "--plot", type=bool, default=False)
     parser.add_argument("-env-name", "--env_name", type=str, default='Hopper-v2')
     parser.add_argument("-seed", "--seed",type=int, default=10)
-    parser.add_argument("-number-of-episode", "--num_episode",type=int, default=100)
+    parser.add_argument("-number-of-episode", "--num_episode",type=int, default=1000)
     parser.add_argument("-number-of-parallel", "--num_para", type=int, default=4)
     parser.add_argument("-batch-size", "--batch_size", type=int, default=2048)
     parser.add_argument("-max-step-per-round", "--max_step_per_round", type=int, default=2000)

@@ -21,7 +21,7 @@ def main_multiprocessing(args,seeds):
 if __name__ == '__main__':
     env_list = ["Swimmer-v2","Reacher-v2","Hopper-v2","HalfCheetah-v2","Walker2d-v2","Humanoid-v2",
                  'MountainCarContinuous-v0', "LunarLanderContinuous-v2", "BipedalWalker-v3"]
-    algorithm_list = ['PPO-KL']#,'PPO-Clip','PPO-S','TR-PPO','TR-PPO-SRB','TR-PPO-RB']
+    algorithm_list = ['PPO-KL','PPO-Clip','PPO-S','TR-PPO','TR-PPO-SRB','TR-PPO-RB']
     args = parameters.get_paras()
     if args.plot == True:
         learning_curve(args,algorithm_list)
